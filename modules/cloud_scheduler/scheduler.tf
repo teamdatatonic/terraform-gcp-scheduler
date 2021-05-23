@@ -14,7 +14,7 @@ resource "google_cloud_scheduler_job" "scheduler_job" {
     dynamic "oidc_token" {
       for_each = var.oidc_token_enable == true ? [1] : []
       content {
-        service_account_email = google_service_account.cloud_scheduler_sa_id.email
+        service_account_email = var.service_account_email
         audience              = var.audience
       }
     }
@@ -24,7 +24,7 @@ resource "google_cloud_scheduler_job" "scheduler_job" {
     dynamic "oauth_token" {
       for_each = var.oauth_token_enable == true ? [1] : []
       content {
-        service_account_email = google_service_account.cloud_scheduler_sa_id.eamil
+        service_account_email = var.service_account_email
         scope                 = var.scope
       }
     }

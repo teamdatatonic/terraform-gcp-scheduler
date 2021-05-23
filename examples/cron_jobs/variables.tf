@@ -12,6 +12,6 @@ variable "environment" {
   type        = string
 }
 
-variable "cloud_schduler_config" {
+variable "cloud_scheduler_config" {
   description = "Map of configs for the scheduler."
 }

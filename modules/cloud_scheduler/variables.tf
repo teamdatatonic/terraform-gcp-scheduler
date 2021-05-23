@@ -68,14 +68,6 @@ variable "body" {
   description = "The relative URI. Must be a valid HTTP relative URL."
 }
 
-variable "scheduler_sa_id" {
+variable "service_account_email" {
   description = "Service Account For the Cloud Scheduler."
-}
-
-variable "sa_display_name" {
-  description = "Cloud Scheduler Service Account Display Name."
-}
-
-variable "scheduler_sa_roles" {
-  description = "Project Level IAM roles for the Cloud Scheduler ServiceAccount."
 }
