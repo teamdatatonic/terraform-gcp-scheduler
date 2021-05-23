@@ -39,11 +39,6 @@ variable "uri" {
   type        = string
 }
 
-variable "oidc_service_token" {
-  description = "service_account_email - (Required) Service account email to be used for generating OAuth token. The service account must be within the same project as the job."
-}
-
-
 variable "environment" {
   description = "The GCP envioment where the scheduler will be created."
   type        = string
@@ -52,10 +47,6 @@ variable "environment" {
 variable "audience" {
   description = "(Optional) Audience to be used when generating OIDC token. If not specified, the URI specified in target will be used."
   type        = string
-}
-
-variable "service_account_email" {
-  description = "Service account email to be used for generating OAuth token. The service account must be within the same project as the job."
 }
 
 variable "scope" {
@@ -74,5 +65,17 @@ variable "oauth_token_enable" {
 
 
 variable "body" {
-  description = "The relative URI. The relative URL must begin with " / " and must be a valid HTTP relative URL. It can contain a path, query string arguments, and # fragments. If the relative URL is empty, then the root path " / " will be used. No spaces are allowed, and the maximum length allowed is 2083 characters"
+  description = "The relative URI. Must be a valid HTTP relative URL."
+}
+
+variable "scheduler_sa_id" {
+  description = "Service Account For the Cloud Scheduler."
+}
+
+variable "sa_display_name" {
+  description = "Cloud Scheduler Service Account Display Name."
+}
+
+variable "scheduler_sa_roles" {
+  description = "Project Level IAM roles for the Cloud Scheduler ServiceAccount."
 }
